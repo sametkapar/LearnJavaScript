@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tarih Metotları</title>
+    <label id="lbl_sonuc"></label><br>
+    <label id="lbl_sonuc1"></label><br>
+    <label id="lbl_sonuc2"></label><br>
+    <label id="lbl_sonuc3"></label><br>
+    <label id="lbl_sonuc4"></label><br>
+    <label id="lbl_sonuc5"></label><br>
+    <label id="lbl_sonuc6"></label><br>
+    <label id="lbl_sonuc7"></label><br>
+    <label id="lbl_sonuc8"></label><br>
+    <label id="lbl_sonuc9"></label><br>
+    <label id="lbl_sonuc10"></label><br>
+    <label id="lbl_sonuc11"></label><br>
+    <label id="lbl_sonuc12"></label><br>
+</head>
+<body>
+    <script>
+        var tarih = new Date("2025-03-22");
+        document.getElementById("lbl_sonuc").innerHTML = "Yıl = " + tarih.getFullYear();
+        document.getElementById("lbl_sonuc1").innerHTML = "Ay = " + (tarih.getMonth() + 1);  // ay 0 dan başlıyor dizi index nosundan göre
+        document.getElementById("lbl_sonuc2").innerHTML = "Tarih = " + tarih;
+        var aylar = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+        document.getElementById("lbl_sonuc3").innerHTML = "Ay = " + aylar[tarih.getMonth()];
+        document.getElementById("lbl_sonuc4").innerHTML = "Gün = " + tarih.getDate();
+        document.getElementById("lbl_sonuc5").innerHTML = "Saat = " + tarih.getHours();
+        document.getElementById("lbl_sonuc6").innerHTML = "Dakika = " + tarih.getMinutes();
+        document.getElementById("lbl_sonuc7").innerHTML = "Saniye = " + tarih.getSeconds();
+        var gunler = ["Pazar", "Pazartesi", "Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
+        document.getElementById("lbl_sonuc7").innerHTML = "Gün = " + tarih.getDay();
+        document.getElementById("lbl_sonuc8").innerHTML = "Gün = " + gunler[tarih.getDay()];
+        document.getElementById("lbl_sonuc9").innerHTML = "Zaman Farkı Dakika = " + tarih.getTimezoneOffset();
+
+        //Set
+        var tarih2 = new Date();
+        tarih2.setFullYear(2027);
+        tarih2.setMonth(11);
+        tarih2.setDate(2);
+        document.getElementById("lbl_sonuc10").innerHTML = "Ayarlanmış tarih = "+tarih2;
+
+        var tarih3 = new Date();
+        tarih3.setDate(tarih3.getDate()+50);
+        document.getElementById("lbl_sonuc11").innerHTML = "Eklenmiş tarih = "+tarih3;
+
+        //setHours(), setMinutes(), setSeconds()
+
+        var bugun = new Date();
+        var birgun = new Date();
+        birgun.setFullYear(2028,2,22);
+        var mesaj = "";
+        if(birgun > bugun)
+        {
+            mesaj = "Bu gün büyüktür, Naber Müdür";
+        }
+        else
+        {
+            mesaj = "Bir gün bu günden büyük";
+        }
+        document.getElementById("lbl_sonuc12").innerHTML = mesaj;
+    </script
+</body>
+</html>

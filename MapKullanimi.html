@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Kullanımı</title>
+    <label id="lbl_sonuc1"></label><br>
+    <label id="lbl_sonuc2"></label><br>
+    <label id="lbl_sonuc3"></label><br>
+    <label id="lbl_sonuc4"></label><br>
+    <label id="lbl_sonuc5"></label><br>
+    <label id="lbl_sonuc6"></label><br>
+    <label id="lbl_sonuc7"></label><br>
+    <label id="lbl_sonuc8"></label><br>
+    <label id="lbl_sonuc9"></label><br>
+
+</head>
+<body>
+    <script>
+        var urunler = new Map([
+            ["urun 1", 25],
+            ["urun 2", 5],
+            ["urun 3", 50],
+        ]);
+        document.getElementById("lbl_sonuc1").innerHTML = urunler.get("urun 1");
+        urunler.set("urun 1", 45);
+        document.getElementById("lbl_sonuc2").innerHTML = urunler.get("urun 1");
+        //document.getElementById("lbl_sonuc2").innerHTML = typeof urunler;
+        document.getElementById("lbl_sonuc3").innerHTML = urunler.size;
+        //urunler.clear();
+        //document.getElementById("lbl_sonuc3").innerHTML = urunler.size;
+        document.getElementById("lbl_sonuc3").innerHTML = urunler.has("urun 1");
+        var liste = ""
+        urunler.forEach(function(v,k){
+            liste += k+ ' - '+ v;
+        
+        });
+        document.getElementById("lbl_sonuc4").innerHTML = liste;
+        
+        liste2 = "";
+
+        for(var x of urunler.entries()){
+            liste2 += x + " ";
+        }
+        document.getElementById("lbl_sonuc5").innerHTML = liste2;
+
+           
+        liste3 = "";
+
+        for(var x of urunler.keys()){
+            liste3 += x+ " ";
+        }
+        document.getElementById("lbl_sonuc6").innerHTML = liste3;
+
+           
+        liste4 = "";
+
+        for(var x of urunler.values()){
+            liste4 += x + " ";
+        }
+        document.getElementById("lbl_sonuc7").innerHTML = liste4;
+        
+        var toplam = 0;
+        for( var x of urunler.values()){
+            toplam +=x;
+        }
+        document.getElementById("lbl_sonuc8").innerHTML = toplam;
+
+        var arabalar = [
+            {brand:"Audi A3", price:2000000},
+            {brand:"Fiat Doblo", price:890000},
+            {brand:"Tofaş Şahin", price:200000},
+            {brand:"Tofaş Doğan", price:300000},
+        ];
+
+        function filtrele({price})
+        {
+            return price > 250000? "Normal" : "Düşük";
+        }
+
+        var sonuc = Map.groupBy(arabalar, filtrele)
+
+        var sonucmetin = "";
+        
+        for(var x of sonuc.get("Normal"))
+        {
+            sonucmetin += x.brand + " " + x.price + "<br/>"
+        }
+        document.getElementById("lbl_sonuc9").innerHTML = sonucmetin;
+    </script>
+</body>
+</html>
