@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM HTML Değiştirme</title>
+</head>
+<body>
+    <div id="dv_ekran">
+
+    </div>
+    <label id="lbl_sonuc"></label><br>
+    <button id="btn_degistir">TIKLA</button><br>
+   
+    <img  id="img_gulucuk" src="falcon.png">
+    <script>
+        document.getElementById("dv_ekran").innerHTML = "<a href='https://www.google.com'>Gittim Ben</a>"
+        document.getElementById("lbl_sonuc").innerText = "Merhaba";
+
+        var degistirBtn = document.getElementById("btn_degistir");
+
+        degistirBtn.onclick = function(){
+            document.getElementById("img_gulucuk").src = "yoda.png";
+        }
+    </script>
+</body>
+</html>

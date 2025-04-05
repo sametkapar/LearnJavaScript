@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CSS Değiştirme</title>
+</head>
+<body>
+        <label id="lbl_sonuc" onclick="degistir()">İçinde yazı var</label>
+        <button type="button" onclick="document.getElementById('lbl_sonuc').style.color ='red'">Kırmızı Yab</button>
+    <script>
+        function degistir()
+        {
+            document.getElementById("lbl_sonuc").style.color = "blue";
+        }
+    </script>
+</body>
+</html>
