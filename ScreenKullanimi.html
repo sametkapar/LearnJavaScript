@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen kullanımı</title>
+</head>
+<body>
+
+    <label id="ekran"></label><br>
+    <label id="ekran2"></label>
+    <div id="kutu" style="background-color: aqua; min-height: 200px;"></div>
+    <script>
+        var genislik = screen.width;
+        var yükseklik = screen.height;
+        document.getElementById("ekran").innerHTML = "Genişlik = " + genislik + " px - Yükseklik = " + yükseklik + " px";
+
+        var kullanilabilirgenislik = screen.availHeight;
+        var kullanilabiliryükseklik = screen.availHeight;
+        document.getElementById("ekran2").innerHTML = "Genişlik = " + kullanilabilirgenislik + " px - Yükseklik = " + kullanilabiliryükseklik + " px";
+    </script>
+</body>
+</html>
